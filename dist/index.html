@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./common/swiper.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <style>
+        .swiper-button-next {
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L5%2C44l-4.2-4.2L18.6%2C22L0.8%2C4.2L5%2C0z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
+        }
+    </style>
+</head>
+
+<body>
+    <div class="swiper-container">
+
+        <div class="swiper-wrapper">
+            <div class="swiper-slide bbactive bbbactive1">
+                <img src="./img/11.jpg" alt="" srcset="">
+                <div class="title">
+                    <span class="letter1">啦</span>
+                    <span class="letter2">按</span>
+                    <span class="letter3">啊</span>
+                    <span class="letter4">吧</span>
+                    <span class="letter5">额</span>
+                </div>
+            </div>
+            <div class="swiper-slide"><img src="./img/10.jpg" alt="" srcset="">
+                <div class="title">
+                    <span class="letter1">啦</span>
+                    <span class="letter2">按</span>
+                    <span class="letter3">啊</span>
+                    <span class="letter4">吧</span>
+                    <span class="letter5">额</span>
+                </div>></div>
+            <div class="swiper-slide"><img src="./img/12.jpg" alt="" srcset="">
+                <div class="title">
+                    <span class="letter1">啦</span>
+                    <span class="letter2">按</span>
+                    <span class="letter3">啊</span>
+                    <span class="letter4">吧</span>
+                    <span class="letter5">额</span>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./img/8.jpg" alt="" srcset="">
+                <div class="title">
+                    <span class="letter1">啦</span>
+                    <span class="letter2">按</span>
+                    <span class="letter3">啊</span>
+                    <span class="letter4">吧</span>
+                    <span class="letter5">额</span>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+    <!-- <div class="swiper-button-next swiper-button-white"></div> -->
+    <!-- <div class="swiper-button-next"></div> -->
+    <script src="./common/swiper.min.js"></script>
+    <script>
+        var myswiper = new Swiper('.swiper-container', {
+            autoplay: 4000, //自动播放
+            //loop: true, 循环
+            effect: 'fade',
+            //initialSlide: 2, 初始化索引
+            direction: 'horizontal', //滑动的方向 vertical horizontal
+            //speed: 500, 滑动的速度
+            autoplayDisableOnInteraction: false, //操作swiper后 是否禁止autoplay
+            autoplayStopOnLast: false, //切换到最后一个slide时停止自动切换
+            //grabCursor: true, 指针变手掌
+            //parallax: true, 开启视差效果
+            watchSlidesProgress: true, //计算每个slide的progress（进度，进程） swiper的grogress无需设置即开启
+            watchSlidesVisibility: false, //开启watchSlidesVisibility选项前需要先开启watchSlidesProgress，如果开启了watchSlidesVisibility，则会在每个可见slide增加一个classname，默认为'swiper-slide-visible'。
+            freeMode: false,
+            centeredSlides: false,
+            slidesPerView: 1,
+            // slideToClickedSlide: true,
+            touchRatio: 1,
+            pagination: '.swiper-pagination',
+            // paginationType: 'fraction',
+            paginationClickable: true,
+            // paginationHide: true, 点击隐藏分页
+            paginationElement: 'span',
+            paginationBulletRemder: function(swiper, index, className) {
+                return '<span class ="' + className + '">' + (index + 1) + '</span>';
+            },
+            prevButton: '.swiper-button-prev',
+            nextButton: '.swiper-button-next',
+            zoom: true,
+            onSlideChangeStart: function(swiper) {
+                nextSlide = swiper.slides.eq(swiper.activeIndex);
+                nextSlide.addClass('bbactive')
+
+                // nextSlide.find('div').addClass("bbbactive")
+                nextSlide.addClass('bbbactive1')
+                    // nextSlide.find('span').eq(1).addClass('bbbactive1')
+                    // nextSlide.find('span').eq(2).addClass('bbbactive2')
+                    // nextSlide.find('span').eq(3).addClass('bbbactive3')
+                    // nextSlide.find('span').eq(4).addClass('bbbactive4')
+            },
+            onSlideChangeEnd: function(swiper) {
+                prevSlide = swiper.slides[swiper.previousIndex];
+                prevSlide.className = "swiper-slide";
+            },
+        })
+    </script>
+</body>
+
+</html>
